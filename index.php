@@ -80,8 +80,8 @@
     <div class="header">
         <h1><a href="Home.php">TOKOOKYU</a></h1>
         <form action="login.php" method="post">
-            <button type="submit" class="login">LOGIN</button>
         </form>
+        <button type="submit" class="login">LOGIN</button>
     </div>
 
     <div class="search-box">

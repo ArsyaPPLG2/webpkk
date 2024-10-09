@@ -128,7 +128,8 @@ $username = "Username";  // Replace with a dynamic username from your database o
 <body>
 
     <div class="header">
-    
+        
+       
 <?php if ($loggedIn): ?>
      <div class="profile">
      <a href="profil.php">

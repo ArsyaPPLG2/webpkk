@@ -66,12 +66,12 @@
             font-weight: bold;
         }
         .login {
-            padding: 10px; /* Ruang di dalam tombol logout */
-            background-color: #d9534f; /* Warna merah untuk logout */
-            color: white; /* Warna teks putih */
-            border: none; /* Menghilangkan border */
-            border-radius: 5px; /* Membulatkan sudut */
-            cursor: pointer; /* Menunjukkan kursor pointer */
+            padding: 10px;
+            background-color: #d9534f; 
+            color: white;
+            border: none;
+            border-radius: 5px; 
+            cursor: pointer; 
         }
     </style>
 </head>

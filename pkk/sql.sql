@@ -9,7 +9,7 @@ CREATE TABLE products (
     image VARCHAR(255) NOT NULL
 );
 
--- Contoh data produk
+
 INSERT INTO products (name, price, image) VALUES 
 ('Kopi Mactha lalu', 'RP. 20.000', 'kopi.png'),
 ('Paket Vegetarian', 'RP. 20.000', 'vegetarian.png'),

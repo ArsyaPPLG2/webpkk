@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Toko Makanan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Tambahan CSS untuk detail produk */
+        .product-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .product-detail img {
+            max-width: 50%; /* Mengatur lebar gambar hingga 50% dari lebar kontainer */
+            height: auto;
+        }
+
+        .product-detail h2 {
+            margin: 10px 0;
+            color: #d32f2f;
+        }
+
+        .product-detail p {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+        .product-navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .product-navigation button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #d32f2f;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .product-navigation button:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="contact-info">
+                <span>📞 0816 1732 5950</span>
+                <span>✉️ awfazahrana@gmail.com</span>
+                <span>🏠 Jl. Halimun 1</span>
+            </div>
+            <div class="user-actions">
+                <span class="currency-selector">RP</span>
+                <span class="account">🧑 My Account</span>
+                <span class="wishlist">❤ Wishlist</span>
+                <span class="cart">🛒 Cart</span>
+            </div>
+        </div>
+        <div class="main-header">
+            <h1>Toko Makanan</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categoris.html">Categories</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search here">
+                <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="product-detail">
+            <img id="product-image" src="anomali1.jpg" alt="Product Image">
+            <h2 id="product-name">Product Name</h2>
+            <p id="product-price">Price</p>
+            <p id="product-description">Description</p>
+            <div class="product-navigation">
+                <button id="prev-button">Previous</button>
+                <button id="next-button">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Toko Makanan. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Product Navigation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const products = [
+                { id: '1', name: 'Cina mali', price: '100.000', description: 'TINGGAL 1', image: 'anomali1.jpg' },
+                { id: '2', name: 'Baz', price: '200.000', description: 'Habis', image: 'Baz.jpg' },
+                { id: '3', name: 'Sigma', price: '200.000', description: 'Habis', image: 'anomali2.jpg' },
+                { id: '4', name: 'Si imut', price: '200.000', description: 'Habis', image: 'Si imut dari MD.jpg' },
+                // Tambahkan lebih banyak produk sesuai kebutuhan
+            ];
+
+            let currentIndex = 0;
+            const productImage = document.getElementById('product-image');
+            const productName = document.getElementById('product-name');
+            const productPrice = document.getElementById('product-price');
+            const productDescription = document.getElementById('product-description');
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+
+            function updateProduct(index) {
+                const product = products[index];
+                if (product) {
+                    productImage.src = product.image;
+                    productName.textContent = product.name;
+                    productPrice.textContent = product.price;
+                    productDescription.textContent = product.description;
+                }
+            }
+
+            prevButton.onclick = function() {
+                currentIndex = (currentIndex === 0) ? products.length - 1 : currentIndex - 1;
+                updateProduct(currentIndex);
+            };
+
+            nextButton.onclick = function() {
+                currentIndex = (currentIndex === products.length - 1) ? 0 : currentIndex + 1;
+                updateProduct(currentIndex);
+            };
+
+            // Initialize the first product
+            updateProduct(currentIndex);
+        });
+    </script>
+</body>
+</html>

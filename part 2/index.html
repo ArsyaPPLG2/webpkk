@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokookyu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="contact-info">
+                <span>📞 0816 1732 5950</span>
+                <span>✉️ awfazahrana@gmail.com</span>
+                <span>🏠 Jl. Halimun 1</span>
+            </div>
+            <div class="user-actions">
+                <span class="currency-selector">RP</span>
+                <span class="account">🧑 My Account</span>
+                <span class="wishlist">❤ Wishlist</span>
+                <span class="cart">🛒 Cart</span>
+            </div>
+        </div>
+        <div class="main-header">
+            <h1>Tokookyu</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categoris.html">Categories</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="search-box" placeholder="Search here" onkeyup="searchProducts()">
+                <button onclick="searchProducts()">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- <div class="sort-options">
+            <label for="price-sort">Sort by Price: </label>
+            <select id="price-sort">
+                <option value="asc">Lowest to Highest</option>
+                <option value="desc">Highest to Lowest</option>
+            </select>
+        </div> -->
+        <section class="promotions">
+            <div class="promo-item">
+                <img src="kopi.jpeg" alt="Kopi">
+                <h2>Kopi</h2>
+                <a href="#">Shop Now</a>
+            </div>
+            <div class="promo-item">
+                <img src="makaroni.jpeg" alt="Makaroni">
+                <h2>Makaroni</h2>
+                <a href="#">Shop Now</a>
+            </div>
+            <div class="promo-item">
+                <img src="nasi.jpeg" alt="Paket Nasi">
+                <h2>Paket Nasi</h2>
+                <a href="#">Shop Now</a>
+            </div>
+        </section>
+
+        <section class="new-products">
+            <h2>New Products</h2>
+        <div class="sort-options">
+            <label for="price-sort">Sort by Price: </label>
+            <select id="price-sort">
+                <option value="asc">Lowest to Highest</option>
+                <option value="desc">Highest to Lowest</option>
+            </select>
+        </div>
+            <!-- Dropdown for sorting products -->
+            <div class="product-grid" id="product-grid">
+                <div class="product-item" data-price="10000" data-name="Anomali Kopi">
+                    <img src=".jpg" alt="Product">
+                    <h3>New Product</h3>
+                    <p>10.000</p>
+                    <div class="product-actions">
+                        <span>❤</span>
+                        <span>🔍</span>
+                        <span>🛒</span>
+                    </div>
+                </div>
+                <div class="product-item" data-price="200000" data-name="Anomali Kopi Premium">
+                    <img src=".jpg" alt="Product">
+                    <h3>New Product Premium</h3>
+                    <p>200.000</p>
+                    <div class="product-actions">
+                        <span>❤</span>
+                        <span>🔍</span>
+                        <span>🛒</span>
+                    </div>
+                </div>
+                <div class="product-item" data-price="20000" data-name="Anomali Kopi Premium">
+                    <img src=".jpg" alt="Product">
+                    <h3>New Product </h3>
+                    <p>20.000</p>
+                    <div class="product-actions">
+                        <span>❤</span>
+                        <span>🔍</span>
+                        <span>🛒</span>
+                    </div>
+                </div>
+                <div class="product-item" data-price="10000" data-name="Anomali Kopi Premium">
+                    <img src=".jpg" alt="Product">
+                    <h3>New Product </h3>
+                    <p>10.000</p>
+                    <div class="product-actions">
+                        <span>❤</span>
+                        <span>🔍</span>
+                        <span>🛒</span>
+                    </div>
+                </div>
+                <!-- Add more product items as needed -->
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tokookyu. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Sorting and Searching -->
+    <script>
+        // Sorting functionality
+        document.getElementById('price-sort').addEventListener('change', function () {
+            let sortOrder = this.value;
+            let productGrid = document.getElementById('product-grid');
+            let products = Array.from(productGrid.getElementsByClassName('product-item'));
+
+            products.sort(function (a, b) {
+                let priceA = parseInt(a.getAttribute('data-price'));
+                let priceB = parseInt(b.getAttribute('data-price'));
+
+                return sortOrder === 'asc' ? priceA - priceB : priceB - priceA;
+            });
+
+            productGrid.innerHTML = '';
+            products.forEach(function (product) {
+                productGrid.appendChild(product);
+            });
+        });
+
+        // Search functionality
+        function searchProducts() {
+            let input = document.getElementById('search-box').value.toLowerCase();
+            let productItems = document.getElementsByClassName('product-item');
+
+            Array.from(productItems).forEach(function (item) {
+                let productName = item.getAttribute('data-name').toLowerCase();
+                if (productName.includes(input)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

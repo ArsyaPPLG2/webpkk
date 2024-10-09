@@ -1,10 +1,8 @@
 
   <?php
-// Simulate user login status (this would be dynamic in a real-world app)
-$loggedIn = true;  // Change to false for not logged in
+$loggedIn = true; 
 
-// Simulated username
-$username = "Username";  // Replace with a dynamic username from your database or session
+$username = "Username";
 ?>
 
 <!DOCTYPE html>
@@ -143,9 +141,9 @@ $username = "Username";  // Replace with a dynamic username from your database o
                 <?php endif; ?>
             </div>
             
-            <!-- Sidebar Menu -->
+           
             <div class="sidebar-menu">
-                <!-- Menu Icons -->
+      
                 <div class="menu-item">
                     <a href="setting.php">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
@@ -185,7 +183,7 @@ $username = "Username";  // Replace with a dynamic username from your database o
             <p>Help</p>
         </div>
         
-        <!-- Logout Button -->
+      
         <div class="logout-button">
             <form action="logout.php" method="POST">
                 <button type="submit">Log out</button>
@@ -193,14 +191,14 @@ $username = "Username";  // Replace with a dynamic username from your database o
         </div>
     </div>
     
-    <!-- Search box -->
+  
     <h1><a href="home.php">TOKOOKYU</a></h1>
     <div class="search-box">
         <input type="text" placeholder="Search Here">
         <input type="submit" value="Search">
     </div>
 
-    <!-- Products Section -->
+   
     <div class="products">
         <div class="product">
             <img src="kopi.jpeg" alt="Kopi">
